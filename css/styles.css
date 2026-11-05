@@ -1,13 +1,35 @@
 /* Base: sizes in rem/em; html font-size is the only px anchor. */
-:root { --pad: 1rem; --max: 72rem; }
-*, *::before, *::after { box-sizing: border-box; }
+:root { 
+  --pad: 1rem; --max: 72rem; 
+}
+
+*, *::before, *::after { 
+  box-sizing: border-box; 
+}
+
 html { font-size: 100%; }
 body { margin: 0; font-family: system-ui, sans-serif; line-height: 1.5; }
 img { max-width: 100%; height: auto; display: block; }
-section, .site-header, .site-footer { padding: 2rem var(--pad); }
-.site-header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1em; }
-.site-nav { display: none; width: 100%; flex-direction: column; gap: .5em; }
-.site-nav.open { display: flex; }
+
+section, .site-header, .site-footer {
+   padding: 2rem var(--pad); 
+  }
+.site-header { 
+  display: flex; 
+  flex-wrap: wrap; 
+  align-items: center; 
+  justify-content: space-between; 
+  gap: 1em; 
+}
+.site-nav { 
+  display: none; 
+  width: 100%; 
+  flex-direction: column; 
+  gap: .5em;
+}
+.site-nav.open { 
+  display: flex; 
+}
 @media (min-width: 48em) {
   .nav-toggle { display: none; }
   .site-nav { display: flex; width: auto; flex-direction: row; gap: 1.5em; }

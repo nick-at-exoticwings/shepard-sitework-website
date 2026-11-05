@@ -24,4 +24,4 @@ Cut from the supplied artboards, colors snapped to the exact spec hex values:
 
 - `images/logo-horizontal-light.png` (header, 440 x 248)
 - `images/logo-arch-light.png` (footer, 480 x 350)
-- `images/logo-mark.png`, `images/apple-touch-icon.png`, `favicon.png`
+- `images/apple-touch-icon.png`, `favicon.png` (the S mark)

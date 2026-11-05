@@ -1,4 +1,18 @@
-// Gallery lightbox, service preselect, quote form states, footer year. No external libraries used.
+// Mobile menu, gallery lightbox, service preselect, quote form states, footer year. No external libraries used.
+
+// Mobile menu: toggle the panel, close it on a link tap or Escape.
+const menuButton = document.querySelector('.nav-toggle');
+const menu = document.getElementById('site-nav');
+const setMenu = (open) => {
+  menu.classList.toggle('open', open);
+  menuButton.setAttribute('aria-expanded', open);
+  menuButton.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+};
+menuButton.addEventListener('click', () => setMenu(!menu.classList.contains('open')));
+menu.addEventListener('click', (e) => { if (e.target.closest('a')) setMenu(false); });
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && menu.classList.contains('open')) { setMenu(false); menuButton.focus(); }
+});
 
 // Gallery: open each photo link in the native <dialog>. Without JS the link opens the full image.
 const lb = document.getElementById('lightbox');

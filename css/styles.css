@@ -208,14 +208,12 @@ a {
   height: 3rem;
   width: auto;
 }
-.site-nav {
-  display: none;
-}
 .btn-call {
   min-height: 2.75rem;
   padding: .55em 1.5em .55em 1em;
   font-size: 1.0625rem;
   letter-spacing: .03em;
+  margin-left: auto;
 }
 .btn-call svg {
   width: 1.1em;
@@ -223,31 +221,112 @@ a {
   fill: currentColor;
   flex: none;
 }
-.call-label {
+/* Phones show "Call", wider screens show the number */
+.call-num {
   display: none;
 }
 @media (min-width: 30em) {
   .call-label {
+    display: none;
+  }
+  .call-num {
     display: inline;
   }
 }
+
+/* Mobile menu button: Limestone circle, three Blacktop bars */
+.nav-toggle {
+  position: relative;
+  flex: none;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 0;
+  border-radius: 50%;
+  background: var(--stone);
+  cursor: pointer;
+}
+.nav-toggle span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 1.25rem;
+  height: .1875rem;
+  margin: -.09375rem 0 0 -.625rem;
+  background: var(--black);
+  border-radius: .125rem;
+  transition: transform .25s, opacity .2s;
+}
+.nav-toggle span:nth-child(1) {
+  transform: translateY(-.4rem);
+}
+.nav-toggle span:nth-child(3) {
+  transform: translateY(.4rem);
+}
+/* Open: top and bottom bars rotate into an X, middle bar fades out */
+.nav-toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: rotate(45deg);
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+/* Mobile menu panel: drops down under the header */
+.site-nav {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  flex-direction: column;
+  padding: .5rem var(--gut) 1.5rem;
+  background: var(--black);
+  border-bottom: .25rem solid var(--gold);
+}
+.site-nav.open {
+  display: flex;
+}
+.site-nav a {
+  color: var(--stone);
+  text-decoration: none;
+  font: 800 1.75rem/1 var(--head);
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  padding: .9rem 0;
+  border-bottom: .0625rem solid rgb(255 250 237 / .15);
+}
+.site-nav a:hover {
+  color: var(--gold);
+}
+
 @media (min-width: 56em) {
-  .site-nav {
+  .nav-toggle {
+    display: none;
+  }
+  .site-nav,
+  .site-nav.open {
     display: flex;
+    position: static;
+    flex-direction: row;
     gap: 2rem;
     margin-left: auto;
+    padding: 0;
+    border: 0;
   }
   .site-nav a {
-    color: var(--stone);
-    text-decoration: none;
     font: 600 1rem/1 var(--head);
-    text-transform: uppercase;
     letter-spacing: .12em;
     padding: .5em 0;
     border-bottom: .125rem solid transparent;
   }
   .site-nav a:hover {
+    color: var(--stone);
     border-color: var(--gold);
+  }
+  .btn-call {
+    margin-left: 0;
   }
   .brand img {
     height: 3.5rem;

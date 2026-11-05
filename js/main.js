@@ -1,4 +1,4 @@
-// Gallery lightbox, service preselect, quote form states, footer year. No libraries.
+// Gallery lightbox, service preselect, quote form states, footer year. No external libraries used.
 
 // Gallery: open each photo link in the native <dialog>. Without JS the link opens the full image.
 const lb = document.getElementById('lightbox');

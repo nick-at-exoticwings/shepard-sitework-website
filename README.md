@@ -2,6 +2,8 @@
 
 Pure HTML, CSS and JS. No libraries, no build step. Open `index.html` in a browser.
 
+Plain simple variable naming conventions. Made for humans.
+
 - `index.html` — the whole one-page site, sections in spec order (header, welcome, what we do, previous work, reviews, quote form + contact, footer).
 - `css/styles.css` — all styles; sizes in rem/em, mobile first. Colors are the exact logo hex values.
 - `js/main.js` — small vanilla JS: gallery lightbox (native `<dialog>`), "Quote this job" links that preselect the service, quote form states (error, sending, success), footer year.
